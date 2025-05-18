@@ -85,16 +85,16 @@ button:hover {
 <body>
   <h1>ADITEP</h1>
   <div class="form-container">
-    <form action="thankyou.html" method="GET">
+    <form id="registerForm">
       <label for="name">ชื่อของคุณ:</label>
       <input type="text" id="name" name="name" required><label for="bank">เลือกธนาคาร:</label>
   <select id="bank" name="bank" required>
     <option value="">-- กรุณาเลือกธนาคาร --</option>
-    <option value="kbank">กสิกรไทย</option>
-    <option value="scb">ไทยพาณิชย์</option>
-    <option value="bbl">กรุงเทพ</option>
-    <option value="ktb">กรุงไทย</option>
-    <option value="tmb">ทีเอ็มบี</option>
+    <option value="กสิกรไทย">กสิกรไทย</option>
+    <option value="ไทยพาณิชย์">ไทยพาณิชย์</option>
+    <option value="กรุงเทพ">กรุงเทพ</option>
+    <option value="กรุงไทย">กรุงไทย</option>
+    <option value="ทีเอ็มบี">ทีเอ็มบี</option>
   </select>
 
   <label for="account">เลขบัญชีธนาคาร:</label>
@@ -104,6 +104,19 @@ button:hover {
 </form>
 
   </div>
-  <div class="footer">ผู้พัฒนาฯ : เซียน หยอง.</div>
-</body>
-</html>
+  <div class="footer">ผู้พัฒนาฯ : เซียน หยอง.</div>  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const bank = document.getElementById('bank').value;
+      const account = document.getElementById('account').value;
+
+      // จำลองการบันทึกข้อมูล (จริงๆ ต้องส่งไป backend หรือ Firebase)
+      localStorage.setItem('memberData', JSON.stringify({ name, bank, account }));
+
+      // เด้งไปหน้า thankyou.html
+      window.location.href = 'thankyou.html';
+    });
+  </script></body>
+  </html>
