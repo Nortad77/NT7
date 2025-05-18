@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADITEP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sriracha', cursive;
+      background-color: #ffffff;
+      color: #660000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fff0f0, #ffe5e5);
+    }h1 {
+  font-size: 3em;
+  color: #cc0000;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px #ffdddd;
+}
+
+.form-container {
+  background-color: #ffffffee;
+  border: 2px solid #ffc0c0;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(204, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2em;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ffaaaa;
+  border-radius: 15px;
+  font-size: 1em;
+  background-color: #fffafa;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  outline: none;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 12px;
+  background-color: #cc0000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #a30000;
+  transform: scale(1.02);
+}
+
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9em;
+  color: #999;
+}
+
+  </style>
+</head>
+<body>
+  <h1>ADITEP</h1>
+  <div class="form-container">
+    <form action="thankyou.html" method="GET">
+      <label for="name">ชื่อของคุณ:</label>
+      <input type="text" id="name" name="name" required><label for="bank">เลือกธนาคาร:</label>
+  <select id="bank" name="bank" required>
+    <option value="">-- กรุณาเลือกธนาคาร --</option>
+    <option value="kbank">กสิกรไทย</option>
+    <option value="scb">ไทยพาณิชย์</option>
+    <option value="bbl">กรุงเทพ</option>
+    <option value="ktb">กรุงไทย</option>
+    <option value="tmb">ทีเอ็มบี</option>
+  </select>
+
+  <label for="account">เลขบัญชีธนาคาร:</label>
+  <input type="text" id="account" name="account" required>
+
+  <button type="submit">สมัครสมาชิก</button>
+</form>
+
+  </div>
+  <div class="footer">ผู้พัฒนาฯ : เซียน หยอง.</div>
+</body>
+</html>
