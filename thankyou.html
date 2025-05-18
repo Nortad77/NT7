@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ยินดีต้อนรับสู่ ADITEP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sriracha', cursive;
+      background: linear-gradient(145deg, #fff0f0, #ffe5e5);
+      color: #660000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }.balance-box {
+  margin-top: 2rem;
+  background-color: #ffffffee;
+  border: 2px solid #ffc0c0;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  box-shadow: 0 6px 12px rgba(204, 0, 0, 0.1);
+  font-size: 2em;
+  color: #cc0000;
+  text-align: center;
+}
+
+.game-button {
+  margin-top: 2rem;
+  padding: 12px 24px;
+  background-color: #cc0000;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.game-button:hover {
+  background-color: #a30000;
+  transform: scale(1.05);
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff5f5;
+  padding: 2rem;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  max-width: 350px;
+  border: 2px solid #ffb3b3;
+}
+
+.popup-content h2 {
+  color: #cc0000;
+  margin-bottom: 1rem;
+}
+
+.popup-content p {
+  font-size: 1.2em;
+  color: #660000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #cc0000;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>  <div id="popup" class="popup">
+    <div class="popup-content">
+      <div class="close-btn" onclick="closePopup()">&times;</div>
+      <h2>สมัครสมาชิกสำเร็จ</h2>
+      <p>ยินดีต้อนรับเข้าสู่ ADITEP<br>Welcome!</p>
+    </div>
+  </div>  <div class="balance-box">
+    ยอดเงินของคุณ: <strong>0.0 ฿</strong>
+  </div><button class="game-button" onclick="enterGame()">เข้าสู่เกม</button>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function enterGame() {
+      alert("กำลังพาเข้าสู่เกม... (สามารถใส่ลิงก์จริงหรือระบบเกมที่นี่ได้)");
+    }
+  </script></body>
+</html>
