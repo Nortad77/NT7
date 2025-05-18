@@ -1,208 +1,134 @@
-<!DOCTYPE html><html lang="th">
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ยินดีต้อนรับสู่ ADITEP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADITEP</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Sriracha', cursive;
-      background: linear-gradient(145deg, #fff0f0, #ffe5e5);
-      color: #660000;
+      font-family: 'Prompt', sans-serif;
+      background: #ffeaea;
+      color: #b30000;
+      text-align: center;
+    }
+
+    header {
+      background: #ffcccc;
+      padding: 1rem 1.5rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      min-height: 100vh;
-    }.navbar {
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #ffcccc;
-}
+      border-bottom: 2px solid #f59fa5;
+    }
 
-.menu-icon {
-  font-size: 2rem;
-  cursor: pointer;
-}
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #b30000;
+    }
 
-.balance-box {
-  margin-top: 2rem;
-  background-color: #ffffffee;
-  border: 2px solid #ffc0c0;
-  border-radius: 30px;
-  padding: 1rem 2rem;
-  box-shadow: 0 6px 12px rgba(204, 0, 0, 0.1);
-  font-size: 2em;
-  color: #cc0000;
-  text-align: center;
-}
+    .menu-icon {
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
 
-.balance-label {
-  font-size: 1.2rem;
-  color: #990000;
-}
+    .balance-box {
+      background: white;
+      margin: 2rem auto;
+      padding: 1rem;
+      border-radius: 20px;
+      max-width: 300px;
+      box-shadow: 0 0 10px #f3b6b6;
+    }
 
-.balance-amount {
-  font-size: 2.5rem;
-  color: #cc0000;
-}
+    .balance-box h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #b30000;
+    }
 
-.button-row {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    .balance-amount {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      color: #cc0000;
+    }
 
-.action-button {
-  padding: 12px 24px;
-  background-color: #cc0000;
-  color: #fff;
-  font-size: 1.1em;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
-}
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
 
-.action-button:hover {
-  background-color: #a30000;
-  transform: scale(1.05);
-}
+    .btn {
+      background-color: #cc0000;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-.admin-contact {
-  margin-top: 2rem;
-}
+    .btn-light {
+      background-color: #ff9999;
+    }
 
-.admin-link {
-  display: inline-block;
-  background-color: #ff6666;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
+    .promo-section {
+      margin: 2rem 0;
+    }
 
-.admin-link:hover {
-  background-color: #cc0000;
-}
+    .promo-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
 
-.promo-section {
-  margin-top: 2rem;
-  text-align: center;
-}
+    .promo {
+      background: white;
+      margin: 0.5rem auto;
+      padding: 0.8rem;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 5px #f5c2c2;
+    }
 
-.promo-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #cc0000;
-}
-
-.promo-list {
-  list-style: none;
-  padding: 0;
-}
-
-.promo-list li {
-  background-color: #fff0f0;
-  padding: 10px 20px;
-  margin: 0.5rem auto;
-  width: 80%;
-  border-radius: 20px;
-  border: 1px solid #ffc0c0;
-  color: #660000;
-}
-
-.popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.popup-content {
-  background-color: #fff5f5;
-  padding: 2rem;
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  max-width: 350px;
-  border: 2px solid #ffb3b3;
-}
-
-.popup-content h2 {
-  color: #cc0000;
-  margin-bottom: 1rem;
-}
-
-.popup-content p {
-  font-size: 1.2em;
-  color: #660000;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #cc0000;
-  cursor: pointer;
-}
-
+    footer {
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <div class="menu-icon">≡</div>
-  </div>  <div id="popup" class="popup">
-    <div class="popup-content">
-      <div class="close-btn" onclick="closePopup()">&times;</div>
-      <h2>สมัครสมาชิกสำเร็จ</h2>
-      <p>ยินดีต้อนรับเข้าสู่ ADITEP<br>Welcome!</p>
-    </div>
-  </div>  <div class="balance-box">
-    <div class="balance-label">Balance</div>
+
+  <header>
+    <div class="site-title">ADITEP</div>
+    <div class="menu-icon">&#9776;</div>
+  </header>
+
+  <div class="balance-box">
+    <h2>Balance</h2>
     <div class="balance-amount">≈ 0.00 ฿</div>
-  </div>  <div class="button-row">
-    <button class="action-button" onclick="deposit()">ฝากเงิน</button>
-    <button class="action-button" onclick="withdraw()">ถอนเงิน</button>
-    <button class="action-button" onclick="enterGame()">เข้าสู่เกม</button>
-  </div>  <div class="promo-section">
+  </div>
+
+  <div class="button-group">
+    <button class="btn">ฝากเงิน</button>
+    <button class="btn">ถอนเงิน</button>
+    <button class="btn">เข้าสู่เกม</button>
+  </div>
+
+  <div class="promo-section">
     <div class="promo-title">โปรโมชั่นพิเศษ</div>
-    <ul class="promo-list">
-      <li>โปรฝากแรกของวัน รับโบนัส 50%</li>
-      <li>ชวนเพื่อนรับทันที 20% จากยอดฝากเพื่อน</li>
-      <li>เล่นเสียคืนยอดเสียทุกสัปดาห์ 5%</li>
-    </ul>
-  </div>  <div class="admin-contact">
-    <a class="admin-link" href="https://www.facebook.com/share/15TjHts3Yk/" target="_blank">ติดต่อแอดมิน</a>
-  </div>  <script>
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
+    <div class="promo">โปรฝากแรกของวัน รับโบนัส 50%</div>
+    <div class="promo">ชวนเพื่อนรับทันที 20% จากยอดฝากเพื่อน</div>
+    <div class="promo">เล่นเสียคืนยอดเสียทุกสัปดาห์ 5%</div>
+  </div>
 
-    function enterGame() {
-      alert("กำลังพาเข้าสู่เกม...");
-    }
+  <footer>
+    <a href="https://www.facebook.com/share/15TjHts3Yk/" target="_blank">
+      <button class="btn btn-light">ติดต่อแอดมิน</button>
+    </a>
+  </footer>
 
-    function deposit() {
-      alert("ระบบฝากยังไม่เปิดให้ใช้งาน");
-    }
-
-    function withdraw() {
-      alert("ระบบถอนยังไม่เปิดให้ใช้งาน");
-    }
-  </script></body>
+</body>
 </html>
