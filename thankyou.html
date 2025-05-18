@@ -27,24 +27,59 @@
   text-align: center;
 }
 
-.game-button {
+.balance-label {
+  font-size: 1.2rem;
+  color: #990000;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  color: #cc0000;
+}
+
+.button-row {
   margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-button {
   padding: 12px 24px;
   background-color: #cc0000;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.1em;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.game-button:hover {
+.action-button:hover {
   background-color: #a30000;
   transform: scale(1.05);
 }
 
-/* Popup Styling */
+.admin-contact {
+  margin-top: 2rem;
+}
+
+.admin-link {
+  display: inline-block;
+  background-color: #ff6666;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.admin-link:hover {
+  background-color: #cc0000;
+}
+
 .popup {
   position: fixed;
   top: 0; left: 0;
@@ -95,16 +130,29 @@
       <p>ยินดีต้อนรับเข้าสู่ ADITEP<br>Welcome!</p>
     </div>
   </div>  <div class="balance-box">
-    ยอดเงินของคุณ: <strong>0.0 ฿</strong>
-  </div><button class="game-button" onclick="enterGame()">เข้าสู่เกม</button>
-
-  <script>
+    <div class="balance-label">Balance</div>
+    <div class="balance-amount">≈ 0.00 ฿</div>
+  </div>  <div class="button-row">
+    <button class="action-button" onclick="deposit()">ฝากเงิน</button>
+    <button class="action-button" onclick="withdraw()">ถอนเงิน</button>
+    <button class="action-button" onclick="enterGame()">เข้าสู่เกม</button>
+  </div>  <div class="admin-contact">
+    <a class="admin-link" href="https://www.facebook.com/share/15TjHts3Yk/" target="_blank">ติดต่อแอดมิน</a>
+  </div>  <script>
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
     }
 
     function enterGame() {
-      alert("กำลังพาเข้าสู่เกม... (สามารถใส่ลิงก์จริงหรือระบบเกมที่นี่ได้)");
+      alert("กำลังพาเข้าสู่เกม...");
+    }
+
+    function deposit() {
+      alert("ระบบฝากยังไม่เปิดให้ใช้งาน");
+    }
+
+    function withdraw() {
+      alert("ระบบถอนยังไม่เปิดให้ใช้งาน");
     }
   </script></body>
-</html>
+  </html>
