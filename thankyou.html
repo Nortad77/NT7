@@ -15,7 +15,21 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-    }.balance-box {
+    }.navbar {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ffcccc;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.balance-box {
   margin-top: 2rem;
   background-color: #ffffffee;
   border: 2px solid #ffc0c0;
@@ -80,6 +94,32 @@
   background-color: #cc0000;
 }
 
+.promo-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.promo-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #cc0000;
+}
+
+.promo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.promo-list li {
+  background-color: #fff0f0;
+  padding: 10px 20px;
+  margin: 0.5rem auto;
+  width: 80%;
+  border-radius: 20px;
+  border: 1px solid #ffc0c0;
+  color: #660000;
+}
+
 .popup {
   position: fixed;
   top: 0; left: 0;
@@ -123,7 +163,10 @@
 
   </style>
 </head>
-<body>  <div id="popup" class="popup">
+<body>
+  <div class="navbar">
+    <div class="menu-icon">≡</div>
+  </div>  <div id="popup" class="popup">
     <div class="popup-content">
       <div class="close-btn" onclick="closePopup()">&times;</div>
       <h2>สมัครสมาชิกสำเร็จ</h2>
@@ -136,6 +179,13 @@
     <button class="action-button" onclick="deposit()">ฝากเงิน</button>
     <button class="action-button" onclick="withdraw()">ถอนเงิน</button>
     <button class="action-button" onclick="enterGame()">เข้าสู่เกม</button>
+  </div>  <div class="promo-section">
+    <div class="promo-title">โปรโมชั่นพิเศษ</div>
+    <ul class="promo-list">
+      <li>โปรฝากแรกของวัน รับโบนัส 50%</li>
+      <li>ชวนเพื่อนรับทันที 20% จากยอดฝากเพื่อน</li>
+      <li>เล่นเสียคืนยอดเสียทุกสัปดาห์ 5%</li>
+    </ul>
   </div>  <div class="admin-contact">
     <a class="admin-link" href="https://www.facebook.com/share/15TjHts3Yk/" target="_blank">ติดต่อแอดมิน</a>
   </div>  <script>
@@ -155,4 +205,4 @@
       alert("ระบบถอนยังไม่เปิดให้ใช้งาน");
     }
   </script></body>
-  </html>
+</html>
